@@ -1,0 +1,95 @@
+{
+  "users": [
+    {
+      "wallet": [],
+      "policy": [],
+      "claim": [],
+      "id": "e588"
+    },
+    {
+      "id": "e08c",
+      "First name": "mohan",
+      "Last name": "cherukuri",
+      "username": "mohan",
+      "email": "mohan@gmail.com",
+      "password": "mohan",
+      "confirm": "mohan"
+    },
+    {
+      "id": "0317",
+      "wallet": "debit card",
+      "amount": "500"
+    },
+    {
+      "id": "3018",
+      "First name": "sruthi",
+      "Last name": "d",
+      "username": "sruthi",
+      "email": "sruthi@gmail.com",
+      "password": "sruthi",
+      "confirm": "sruthi"
+    },
+    {
+      "id": "204b",
+      "policyname": "Daily Accidental Coverage policy",
+      "amount": "500"
+    },
+    {
+      "id": "3c27",
+      "wallet": "credit card",
+      "amount": "3000"
+    },
+    {
+      "id": "3094",
+      "wallet": "credit card",
+      "amount": "3000"
+    },
+    {
+      "id": "0d0c",
+      "policyname": "Daily Accidental Coverage policy",
+      "amount": "500"
+    },
+    {
+      "id": "6132",
+      "policyname": "Daily Accidental Coverage policy",
+      "date": "2024-05-08",
+      "Claimamount": "200"
+    },
+    {
+      "id": "bb97",
+      "wallet": "credit card",
+      "amount": "500"
+    },
+    {
+      "id": "3b60",
+      "policyname": "Daily Accidental Coverage policy",
+      "amount": "500"
+    },
+    {
+      "id": "504c",
+      "wallet": "debit card",
+      "amount": "3000"
+    },
+    {
+      "id": "011c",
+      "policyname": "Daily Accidental Coverage policy",
+      "amount": "500"
+    },
+    {
+      "id": "e843",
+      "policyname": "Daily Accidental Coverage policy",
+      "date": "2024-04-28",
+      "Claimamount": "200"
+    },
+    {
+      "id": "64d1",
+      "wallet": "credit card",
+      "amount": "500"
+    },
+    {
+      "id": "94f1",
+      "wallet": "debit card",
+      "amount": "3000"
+    }
+  ]
+}
