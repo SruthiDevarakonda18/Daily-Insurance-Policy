@@ -22,6 +22,7 @@ const ClientLoginStore = ({children}) => {
   const updateWalletAmount = (newAmount) => {
     setWalletAmount(newAmount);
   };
+  
   async function onClientLogin(userCredObj){
     let res=await axios.get(`http://localhost:4000/users?username=${userCredObj.username}`)
     let userList=res.data

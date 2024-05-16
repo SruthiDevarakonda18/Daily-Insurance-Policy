@@ -10,17 +10,25 @@ import { useNavigate } from 'react-router-dom';
 function AddWallet() {
   let navigate = useNavigate();
   let { register, handleSubmit, formState: { errors } } = useForm();
-  let { handleUser, userLoginStatus} = useContext(ClientLoginContextObj);
+  let { handleUser, userLoginStatus,currentUser,setCurrentUser} = useContext(ClientLoginContextObj);
  let {walletAmount, setWalletAmount,updateWalletAmount}=useContext(ClientLoginContextObj);
-
+  
+ console.log(currentUser);
 
   async function HandleWallet(userObj) {
     try {
-      const updatedWallet = await({ userId: userObj.username }, { amount: setWalletAmount });
-    console.log(updatedWallet) 
-      let res = await axios.post('http://localhost:4000/users', userObj);
-      console.log(res);
-      handleUser(userObj);
+      const updatedWallet = ({ userId: userObj.username }, { amount: setWalletAmount });
+      
+      console.log(userObj)
+      
+    //Change this to put;
+
+      let updatedUser = {...currentUser,wallet : userObj}
+      
+      let res = await axios.put(`http://localhost:4000/users/${currentUser.id}`, updatedUser);
+      console.log(updatedUser);
+      setCurrentUser(updatedUser)
+      handleUser(updatedUser);
       navigate('/purchase-policy');
     } catch (err) {
       console.log(err.message);
@@ -44,7 +52,7 @@ function AddWallet() {
 
           <div className='mb-4'>
             {/* <p>{userId}</p> */}
-            <select {...register('wallet', { required: true })} className="form-control">
+            <select {...register('walletType', { required: true })} className="form-control">
               <option value="">Wallet</option>
               <option value="credit card">Credit Card</option>
               <option value="debit card">Debit Card</option>

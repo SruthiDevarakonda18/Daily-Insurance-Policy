@@ -10,7 +10,7 @@ import axios from 'axios'
 function PurchasePolicy() {
   let navigate = useNavigate();
     let {register,handleSubmit,formState: { errors }}= useForm();
-    let {userLoginStatus}=useContext(ClientLoginContextObj)
+    let {userLoginStatus,currentUser}=useContext(ClientLoginContextObj)
 //     const policyData = [
 //         { id: 1, name: 'Daily Accidental Coverage policy upto 10,000', premium: 100 },
 //         { id: 2, name: 'Policy 2', premium: 200 },
@@ -21,9 +21,12 @@ function PurchasePolicy() {
 //   const handlePolicyChange = (event) => {
 //     setSelectedPolicy(event.target.value);
 //   };
-function HandlePolicy(userObj){
-    axios.post('http://localhost:4000/users',userObj)
-  console.log(userObj)
+async function HandlePolicy(userObj){
+    console.log(userObj);
+    console.log(currentUser)
+    const updatedUser = {...currentUser,policy : userObj}
+    console.log(updatedUser);
+    await axios.put(`http://localhost:4000/users/${currentUser.id}`,updatedUser);
   navigate('/process-claim')
 }
   return (
@@ -71,9 +74,9 @@ function HandlePolicy(userObj){
 </div>
          
           <div className='mb-4'>
-          <label  className="form-label">Premium</label>
-          <input type='number' className='form-control' {...register('amount',{required:true})}/>
-          {errors.amount?.type==='required' && <p>amount is required</p> }
+            <label  className="form-label">Premium</label>
+            <input type='number' className='form-control' {...register('amount',{required:true})}/>
+            {errors.amount?.type==='required' && <p>amount is required</p> }
           </div>
           <br/>
          <button type='submit' className='btn btn-primary  float-end'>Next</button>
