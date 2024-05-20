@@ -10,26 +10,19 @@ import { useNavigate } from 'react-router-dom';
 function AddWallet() {
   let navigate = useNavigate();
   let { register, handleSubmit, formState: { errors } } = useForm();
-  let { handleUser, userLoginStatus,currentUser,setCurrentUser} = useContext(ClientLoginContextObj);
- let {walletAmount, setWalletAmount,updateWalletAmount}=useContext(ClientLoginContextObj);
-  
- console.log(currentUser);
+  let { userLoginStatus,currentUser} = useContext(ClientLoginContextObj);
 
-  async function HandleWallet(userObj) {
+  async function HandleWallet(data) {
     try {
-      const updatedWallet = ({ userId: userObj.username }, { amount: setWalletAmount });
-      
-      console.log(userObj)
-      
-    //Change this to put;
-
-      let updatedUser = {...currentUser,wallet : userObj}
-      
-      let res = await axios.put(`http://localhost:4000/users/${currentUser.id}`, updatedUser);
-      console.log(updatedUser);
-      setCurrentUser(updatedUser)
-      handleUser(updatedUser);
+      console.log(data);
+      const userWallet = ({
+        userId : currentUser.username,
+        amount : data.walletAmount,
+        walletType : data.walletType
+      });
+      await axios.post("http://localhost:4000/wallets",userWallet);
       navigate('/purchase-policy');
+      
     } catch (err) {
       console.log(err.message);
     }

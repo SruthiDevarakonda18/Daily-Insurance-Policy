@@ -1,21 +1,22 @@
 {
   "users": [
     {
-      "First name": "mohan",
-      "Last name": "cherukuri",
-      "username": "dark",
+      "First name": "Mohan",
+      "Last name": "Cherukuri",
+      "username": "mohan",
       "email": "cherukuri.temp@gmail.com",
       "password": "mohan",
       "confirm": "mohan",
-      "id": 1,
-      "wallet": {
-        "walletType": "credit card",
-        "amount": "1000"
-      },
-      "policy": {
-        "policyname": "Daily Accidental Coverage policy",
-        "amount": "1000"
-      }
+      "id": 1
     }
+  ],
+  "wallets": [
+    {
+      "userId": "mohan",
+      "walletType": "credit card",
+      "id": 1
+    }
+  ],
+  "policyClaimTable" : [
   ]
 }
