@@ -11,22 +11,17 @@ function PurchasePolicy() {
   let navigate = useNavigate();
     let {register,handleSubmit,formState: { errors }}= useForm();
     let {userLoginStatus,currentUser}=useContext(ClientLoginContextObj)
-//     const policyData = [
-//         { id: 1, name: 'Daily Accidental Coverage policy upto 10,000', premium: 100 },
-//         { id: 2, name: 'Policy 2', premium: 200 },
-//         { id: 3, name: 'Policy 3', premium: 300 },
-//       ];
-//       const [selectedPolicy, setSelectedPolicy] = useState('');
 
-//   const handlePolicyChange = (event) => {
-//     setSelectedPolicy(event.target.value);
-//   };
 async function HandlePolicy(userObj){
     console.log(userObj);
-    console.log(currentUser)
-    const updatedUser = {...currentUser,policy : userObj}
+    
+    const updatedUser = ({
+      userId : currentUser.username,
+      premium : userObj.premium,
+      policyname:userObj.policyname
+    })
     console.log(updatedUser);
-    await axios.put(`http://localhost:4000/users/${currentUser.id}`,updatedUser);
+    await axios.post("http://localhost:4000/policyClaimTable",updatedUser);
   navigate('/process-claim')
 }
   return (
@@ -48,35 +43,12 @@ async function HandlePolicy(userObj){
               <option value="Daily Accidental Coverage policy">Daily Accidental Coverage policy </option>
           </select> 
            {errors.policyname?.type==='required' && <p className='fs-8' >please select from the list</p> }
-
-
-            {/* <label htmlFor="policy">Select Policy:</label>
-      <select id="policy" value={selectedPolicy} onChange={handlePolicyChange} className = "form-control">
-        <option value="">Select a policy</option>
-        {policyData.map((policy) => (
-          <option key={policy.id} value={policy.id}>
-            {policy.name}
-          </option>
-        ))}
-      </select>
-      {selectedPolicy && (
-        <div>
-          <p>Selected Policy: {selectedPolicy}</p>
-          <p>
-            Policy Name: {policyData.find((policy) => policy.id === Number(selectedPolicy)).name}
-          </p>
-          <p>
-            Policy Premium:
-            {policyData.find((policy) => policy.id === Number(selectedPolicy)).premium}
-          </p>
-        </div> 
-)*/}
 </div>
          
           <div className='mb-4'>
             <label  className="form-label">Premium</label>
-            <input type='number' className='form-control' {...register('amount',{required:true})}/>
-            {errors.amount?.type==='required' && <p>amount is required</p> }
+            <input type='number' className='form-control' {...register('premium',{required:true})}/>
+            {errors.premium?.type==='required' && <p>premium is required</p> }
           </div>
           <br/>
          <button type='submit' className='btn btn-primary  float-end'>Next</button>
