@@ -12,13 +12,21 @@ function PurchasePolicy() {
     let {register,handleSubmit,formState: { errors }}= useForm();
     let {userLoginStatus,currentUser}=useContext(ClientLoginContextObj)
 
-async function HandlePolicy(userObj){
-    console.log(userObj);
-    
+  //const policyData,setPolicyData  = useState([])
+    //UseEffect 
+
+async function HandlePolicy(policyObj){
+    console.log(policyObj);
+    //const selectedPolicy = policyData.filter((item) => item.policyId === policyObj.policyId)
     const updatedUser = ({
       userId : currentUser.username,
-      premium : userObj.premium,
-      policyname:userObj.policyname
+      premium : policyObj.premium,
+      policyname:policyObj.policyname,
+      // maxCost : selectedPolicy.maxCost,
+      //DateOfPurchase : new Date().toString();
+      //ClaimAmount : "",
+      //ClaimStatus : false,
+      //DateTimeOfClaim : ""
     })
     console.log(updatedUser);
     await axios.post("http://localhost:4000/policyClaimTable",updatedUser);
@@ -40,6 +48,12 @@ async function HandlePolicy(userObj){
             <div className='mb-4'>
                  <select  {...register('policyname',{required:true})} className = "form-control">
               <option value="">Policy name</option>
+{/* 
+            policyData.map((item)=>{
+              return  <option value={item.POL1}>{item.policyName}</option>
+              
+            })
+               */}
               <option value="Daily Accidental Coverage policy">Daily Accidental Coverage policy </option>
           </select> 
            {errors.policyname?.type==='required' && <p className='fs-8' >please select from the list</p> }

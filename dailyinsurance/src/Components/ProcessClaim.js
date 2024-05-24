@@ -10,7 +10,36 @@ function ProcessClaim() {
     let {register,handleSubmit,formState: { errors }}= useForm();
     let {userLoginStatus,currentUser}=useContext(ClientLoginContextObj)
 
+  //const policyData,setPolicyData  = useState([])
+    //UseEffect 
+
+
+    //Change to ClaimObj
     function HandleClaim(userObj){
+
+      // Current user id get Policy data of user
+      // let userObj = getRequestion
+      
+      //Chck Claim status is false
+
+      // Compare Dates
+
+      //Check if claim amount is less than the maxCost
+
+      //Edit UserObj
+      //UserObj.DateOfClaim = new Date();
+      //UserObj.Claom = true,
+      //userObj.ClaimAmout = claimObj.amount
+
+      //Put Request policy
+
+      //Get userWallet By username
+
+      //Update wallet amount += claimObj.Amount
+      
+      //put requst wallet
+      
+
          console.log(userObj)
       const claim=({
         Claimamount:userObj.Claimamount,

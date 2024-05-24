@@ -1,61 +1,29 @@
 {
   "users": [
     {
+      "id": "a5b2",
       "First name": "Mohan",
       "Last name": "Cherukuri",
-      "username": "mohan",
+      "username": "dark",
       "email": "cherukuri.temp@gmail.com",
       "password": "mohan",
-      "confirm": "mohan",
-      "id": 1
+      "confirm": "mohan"
     }
   ],
   "wallets": [
     {
-      "userId": "mohan",
-      "walletType": "credit card",
-      "id": 1
-    },
-    {
-      "id": "4af9",
-      "userId": "mohan",
-      "walletType": "debit card"
-    },
-    {
-      "id": "19f2",
-      "userId": "mohan",
-      "walletType": "debit card"
-    },
-    {
-      "id": "13a0",
-      "userId": "mohan",
-      "walletType": "UPI"
-    },
-    {
-      "id": "0673",
-      "userId": "mohan",
-      "amount": "5000",
-      "walletType": "UPI"
-    },
-    {
-      "id": "4a00",
-      "userId": "mohan",
-      "amount": "600",
+      "id": "3690",
+      "userId": "dark",
       "walletType": "debit card"
     }
   ],
   "policyClaimTable": [
     {
-      "id": "cab2",
-      "userId": "mohan",
+      "id": "356f",
+      "userId": "dark",
       "premium": "100",
-      "policyname": "Daily Accidental Coverage policy",
-      "maxcost": 10000,
-      "Date of Purchase": "",
-      "Claim amount": "",
-      "Claim status": "",
-      "DateTime of Claim": "",
-      "policyId":"POL 1"
+      "policyname": "Daily Accidental Coverage policy"
     }
   ]
+
 }

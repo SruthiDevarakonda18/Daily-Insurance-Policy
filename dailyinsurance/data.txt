@@ -1,0 +1,12 @@
+//   "policyListTable": [
+//     {
+//       "id": "onepiece",
+//       "policyName": "Daily Accidental Converage policy upto 10,000",
+//       "premium": 100,
+//       "maxcost": 10000,
+//       "policyId": "POL1"
+//     },
+{
+
+}
+//   ]
