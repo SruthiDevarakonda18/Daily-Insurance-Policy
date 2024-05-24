@@ -15,8 +15,47 @@
       "userId": "mohan",
       "walletType": "credit card",
       "id": 1
+    },
+    {
+      "id": "4af9",
+      "userId": "mohan",
+      "walletType": "debit card"
+    },
+    {
+      "id": "19f2",
+      "userId": "mohan",
+      "walletType": "debit card"
+    },
+    {
+      "id": "13a0",
+      "userId": "mohan",
+      "walletType": "UPI"
+    },
+    {
+      "id": "0673",
+      "userId": "mohan",
+      "amount": "5000",
+      "walletType": "UPI"
+    },
+    {
+      "id": "4a00",
+      "userId": "mohan",
+      "amount": "600",
+      "walletType": "debit card"
     }
   ],
-  "policyClaimTable" : [
+  "policyClaimTable": [
+    {
+      "id": "cab2",
+      "userId": "mohan",
+      "premium": "100",
+      "policyname": "Daily Accidental Coverage policy",
+      "maxcost": 10000,
+      "Date of Purchase": "",
+      "Claim amount": "",
+      "Claim status": "",
+      "DateTime of Claim": "",
+      "policyId":"POL 1"
+    }
   ]
 }
